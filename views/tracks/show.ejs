@@ -1,0 +1,12 @@
+<h2><%= track.track_title %></h2>
+<div class="form-row">
+        <a class="btn btn-danger" 
+        href="https://www.youtube.com/results?search_query=<%= track.track_title%>+by+<%= track.artist_name %>"
+        target="_blank">
+        Youtube
+    </a>
+</div>
+<div>Artist: <%= track.artist_name %></div>
+<div>Album: <%= track.album_title %></div>
+<div>Genre: <%= track.track_genres %></div>
+<div>Publish Date: <%= track.track_date_created %></div>

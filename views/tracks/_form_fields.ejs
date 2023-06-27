@@ -1,0 +1,52 @@
+<div class="form-row">
+    <div class="form-item">
+        <label>Name</label>
+        <input type="text" name="name" value="<%= track.track_title %>">
+    </div>
+    <div class="form-item">
+        <label>Artist</label>
+        <select name="artist">
+        <% artists.forEach(artist => { %>
+            <% if (artist.id === track.artist) { %>
+                <option selected label="<%= artist.name %>" value="<%= artist.id %>"><%= artist.name %></option>
+            <% } else { %>
+                <option label="<%= artist.name %>" value="<%= artist.id %>"><%= artist.name %></option>
+            <% } %>
+        <% }) %>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-item">
+        <label>Albums</label>
+        <select name="album">
+        <% albums.forEach(album => { %>
+            <% if (album.id === track.album) { %>
+                <option selected label="<%= album.name %>" value="<%= album.id %>">
+            <% } else { %>
+                <option label="<%= album.name %>" value="<%= album.id %>">
+            <% } %>
+        <% }) %>
+        </select>
+    </div>
+    <div class="form-item">
+        <label>Genre</label>
+        <select name="genre">
+        <% genres.forEach(genre => { %>
+            <% if (genre.id === track.genre) { %>
+                <option selected label="<%= genre.name %>" value="<%= genre.id %>">
+            <% } else { %>
+                <option label="<%= genre.name %>" value="<%= genre.id %>">
+            <% } %>
+        <% }) %>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-item">
+        <label>Publish Date</label>
+        <input type="date" name="publishDate" 
+            value="<%= track.publishDate == null ? '' : 
+            track.publishDate.toISOString().split('T')[0] %>">
+    </div>
+</div>

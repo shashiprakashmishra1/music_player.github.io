@@ -1,0 +1,7 @@
+<h2><%= artist.artist_name %></h2>
+<% if (tracksByArtist.length > 0){ %>
+    <h2>Tracks By Artist</h2>
+    <% tracksByArtist.forEach(track => { %>
+        <div><%= track.track_title %></div>
+    <% }) %>
+<% } %>

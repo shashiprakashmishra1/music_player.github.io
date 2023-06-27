@@ -1,0 +1,23 @@
+<h2><%= playlist.name %></h2>
+
+<div class="form-row">
+        <a class="btn btn-primary" href="/playlists/<%= playlist.id %>/review">Add Rating</a>
+</div>
+<div class="form-row">
+        <a class="btn btn-primary" href="/playlists/<%= playlist.id %>/edit">Edit</a>
+</div>
+<div class="form-row">
+        <a class="btn btn-primary" href="/playlists/<%= playlist.id %>/addTracks">Add Tracks</a>
+</div>
+<div>Description: <%= playlist.description %></div>
+<div>Privacy: <%= playlist.privacy %></div>
+<div>Last Modified: <%= playlist.lastModified %></div>
+<div>Tracks: <% playlist.tracks.forEach(track => { %>
+        <div><%= track.track_title %> By <%= track.artist_name %></div>
+        <div class="btn-row">
+                <a class="btn btn-primary" href="/tracks/<%= track.id %>">View</a>
+        </div>
+        <% }) %></div>
+<h4>Reviews</h4>
+<div>Comment: <%= playlist.comment %></div>
+<div>Rating: <%= playlist.rating %></div>

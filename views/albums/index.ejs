@@ -1,0 +1,10 @@
+<h2>Search Albums</h2>
+<form action="/albums" method="GET">
+    <label>Name</label>
+    <input type="text" name="album_title" value="<% searchOptions.album_title %>">
+    <button type="submit">Search</button>
+</form>
+<br>
+<% albums.forEach(album => { %>
+    <div><%= album.album_title %></div>
+<% }) %>

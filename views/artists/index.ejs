@@ -1,0 +1,17 @@
+<h2>Search Artists</h2>
+<form action="/artists" method="GET">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Name</label>
+            <input type="text" name="artist_name" value="<% searchOptions.artist_name %>">
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Search</button>
+</form>
+<br>
+<% artists.forEach(artist => { %>
+    <div><%= artist.artist_name %></div>
+    <div class="btn-row">
+        <a class="btn btn-primary" href="/artists/<%= artist.id %>">View</a>
+    </div>
+<% }) %>

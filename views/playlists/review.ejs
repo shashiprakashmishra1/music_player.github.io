@@ -1,0 +1,27 @@
+<h2>Review Playlist</h2>
+<form action="/playlists/<%= playlist.id %>/review?_method=PUT" method="POST">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Comment</label>
+            <textarea name="comment"><%= playlist.comment %></textarea>
+        </div>
+        <div class="form-item">
+            <label>Rating</label>
+            <select name="rating">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+    </div>
+    <a class="btn btn-danger" href="/playlists/<%= playlist.id %>">Cancel</a>
+    <button class="btn btn-primary" type="submit">Update</button>
+</form>
